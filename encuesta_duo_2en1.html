@@ -36,228 +36,186 @@
   .progreso { height: 6px; background: #d2d2d7; border-radius: 999px; overflow: hidden; margin-bottom: 16px; }
   .progreso div { height: 100%; background: var(--azul); width: 0%; transition: width .3s; }
   .fin { text-align: center; padding: 40px 10px; }
+
+  .nota-escala { color: var(--gris); font-size: 13px; margin: 4px 0 10px; line-height: 1.5; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Encuesta: Dúo Despensa Verde Valle 2 en 1</h1>
-  <p class="intro">Somos estudiantes de la Universidad del Caribe. La encuesta toma de 6 a 8 minutos. Sus respuestas son anónimas y se usan solo de forma agregada para un trabajo académico. No pedimos nombre, correo ni teléfono. Al continuar, acepta participar. Datos tratados conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+  <h1>Encuesta de despensa y granos básicos: Dúo Despensa 2 en 1</h1>
+  <p class="intro">Somos estudiantes de la Universidad del Caribe. Esta encuesta toma de 6 a 8 minutos. Sus respuestas son anónimas y se usan solo de forma agregada para un trabajo académico. Al continuar, acepta participar. Puede dejar de responder en cualquier momento.</p>
+  <p class="intro">Aviso de privacidad simplificado: los datos se tratan conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. No se solicitan nombre, correo ni teléfono.</p>
 
   <div class="progreso"><div id="barra"></div></div>
 
   <form id="form" novalidate>
-
-    <!-- PÁGINA 0: consentimiento -->
-    <section class="pagina" data-pagina="0">
+<section class="pagina" data-pagina="0">
       <div class="tarjeta">
-        <div class="seccion-titulo">Consentimiento</div>
-        <div class="pregunta">¿Acepta participar?</div>
-        <label class="opcion"><input type="radio" name="p0" value="Sí"> Sí</label>
-        <label class="opcion"><input type="radio" name="p0" value="No"> No</label>
+<div class="seccion-titulo">Consentimiento</div><div class="pregunta">Pregunta 0. ¿Acepta participar?</div>
+<label class="opcion"><input type="radio" name="p0" value="Sí"> Sí</label>
+<label class="opcion"><input type="radio" name="p0" value="No"> No</label><div class="nota">Si elige No, la encuesta termina.</div>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <div class="error" id="err0">Por favor, elija una opción.</div>
     </section>
-
-    <!-- PÁGINA 1: perfil -->
-    <section class="pagina oculto" data-pagina="1">
+<section class="pagina oculto" data-pagina="1">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 1 · Perfil</div>
-        <div class="pregunta">1. ¿Es usted responsable o corresponsable de las compras de despensa en su hogar?</div>
-        <label class="opcion"><input type="radio" name="p1" value="Sí"> Sí</label>
-        <label class="opcion"><input type="radio" name="p1" value="No"> No</label>
-        <div class="pregunta">2. ¿En qué rango de edad se encuentra?</div>
-        <label class="opcion"><input type="radio" name="p2" value="Menor de 25"> Menor de 25</label>
-        <label class="opcion"><input type="radio" name="p2" value="25 a 34"> 25 a 34</label>
-        <label class="opcion"><input type="radio" name="p2" value="35 a 44"> 35 a 44</label>
-        <label class="opcion"><input type="radio" name="p2" value="45 a 54"> 45 a 54</label>
-        <label class="opcion"><input type="radio" name="p2" value="55 o más"> 55 o más</label>
-        <div class="pregunta">3. ¿Con qué género se identifica?</div>
-        <label class="opcion"><input type="radio" name="p3" value="Femenino"> Femenino</label>
-        <label class="opcion"><input type="radio" name="p3" value="Masculino"> Masculino</label>
-        <label class="opcion"><input type="radio" name="p3" value="Otro"> Otro</label>
-        <label class="opcion"><input type="radio" name="p3" value="Prefiero no decir"> Prefiero no decir</label>
-        <div class="pregunta">4. ¿Cuántas personas habitan en su hogar, incluida usted?</div>
-        <label class="opcion"><input type="radio" name="p4" value="1"> 1 persona</label>
-        <label class="opcion"><input type="radio" name="p4" value="2 a 3"> 2 a 3 personas</label>
-        <label class="opcion"><input type="radio" name="p4" value="4 a 5"> 4 a 5 personas</label>
-        <label class="opcion"><input type="radio" name="p4" value="Más de 5"> Más de 5 personas</label>
-        <div class="pregunta">5. ¿En qué ciudad o área metropolitana reside?</div>
-        <label class="opcion"><input type="radio" name="p5" value="CDMX / Zona Metropolitana"> CDMX / Zona Metropolitana</label>
-        <label class="opcion"><input type="radio" name="p5" value="Guadalajara"> Guadalajara</label>
-        <label class="opcion"><input type="radio" name="p5" value="Monterrey"> Monterrey</label>
-        <label class="opcion"><input type="radio" name="p5" value="Puebla"> Puebla</label>
-        <label class="opcion"><input type="radio" name="p5" value="León"> León</label>
-        <label class="opcion"><input type="radio" name="p5" value="Querétaro"> Querétaro</label>
-        <label class="opcion"><input type="radio" name="p5" value="Mérida"> Mérida</label>
-        <label class="opcion"><input type="radio" name="p5" value="Cancún"> Cancún</label>
-        <label class="opcion"><input type="radio" name="p5" value="Otra ciudad urbana"> Otra ciudad urbana</label>
-        <div class="pregunta">6. ¿Cuál es el ingreso mensual neto aproximado de su hogar?</div>
-        <label class="opcion"><input type="radio" name="p6" value="Menos de $15,000"> Menos de $15,000 MXN</label>
-        <label class="opcion"><input type="radio" name="p6" value="$15,001 a $30,000"> $15,001 a $30,000 MXN</label>
-        <label class="opcion"><input type="radio" name="p6" value="$30,001 a $50,000"> $30,001 a $50,000 MXN</label>
-        <label class="opcion"><input type="radio" name="p6" value="Más de $50,000"> Más de $50,000 MXN</label>
+<div class="seccion-titulo">Sección 1: Perfil</div><div class="pregunta">1. ¿Es usted la persona responsable o corresponsable de decidir y realizar las compras de despensa en su hogar?</div>
+<label class="opcion"><input type="radio" name="p1" value="Sí"> Sí</label>
+<label class="opcion"><input type="radio" name="p1" value="No"> No</label><div class="pregunta">2. ¿En qué rango de edad se encuentra?</div>
+<label class="opcion"><input type="radio" name="p2" value="Menor de 25 años"> Menor de 25 años</label>
+<label class="opcion"><input type="radio" name="p2" value="25 a 34 años"> 25 a 34 años</label>
+<label class="opcion"><input type="radio" name="p2" value="35 a 44 años"> 35 a 44 años</label>
+<label class="opcion"><input type="radio" name="p2" value="45 a 54 años"> 45 a 54 años</label>
+<label class="opcion"><input type="radio" name="p2" value="55 años o más"> 55 años o más</label><div class="pregunta">3. ¿Con qué género se identifica?</div>
+<label class="opcion"><input type="radio" name="p3" value="Femenino"> Femenino</label>
+<label class="opcion"><input type="radio" name="p3" value="Masculino"> Masculino</label>
+<label class="opcion"><input type="radio" name="p3" value="Otro"> Otro</label>
+<label class="opcion"><input type="radio" name="p3" value="Prefiero no decir"> Prefiero no decir</label><div class="pregunta">4. ¿Cuántas personas habitan regularmente en su hogar, incluyéndose a usted?</div>
+<label class="opcion"><input type="radio" name="p4" value="1 persona"> 1 persona</label>
+<label class="opcion"><input type="radio" name="p4" value="2 a 3 personas"> 2 a 3 personas</label>
+<label class="opcion"><input type="radio" name="p4" value="4 a 5 personas"> 4 a 5 personas</label>
+<label class="opcion"><input type="radio" name="p4" value="Más de 5 personas"> Más de 5 personas</label><div class="pregunta">5. ¿En qué ciudad o área metropolitana reside actualmente?</div>
+<label class="opcion"><input type="radio" name="p5" value="CDMX / Zona Metropolitana"> CDMX / Zona Metropolitana</label>
+<label class="opcion"><input type="radio" name="p5" value="Guadalajara"> Guadalajara</label>
+<label class="opcion"><input type="radio" name="p5" value="Monterrey"> Monterrey</label>
+<label class="opcion"><input type="radio" name="p5" value="Puebla"> Puebla</label>
+<label class="opcion"><input type="radio" name="p5" value="León"> León</label>
+<label class="opcion"><input type="radio" name="p5" value="Querétaro"> Querétaro</label>
+<label class="opcion"><input type="radio" name="p5" value="Mérida"> Mérida</label>
+<label class="opcion"><input type="radio" name="p5" value="Cancún"> Cancún</label>
+<label class="opcion"><input type="radio" name="p5" value="Otra ciudad urbana"> Otra ciudad urbana</label><div class="pregunta">6. ¿Cuál es el rango aproximado de ingreso mensual neto total de su hogar?</div>
+<label class="opcion"><input type="radio" name="p6" value="Menos de $15,000 MXN"> Menos de $15,000 MXN</label>
+<label class="opcion"><input type="radio" name="p6" value="$15,001 a $30,000 MXN"> $15,001 a $30,000 MXN</label>
+<label class="opcion"><input type="radio" name="p6" value="$30,001 a $50,000 MXN"> $30,001 a $50,000 MXN</label>
+<label class="opcion"><input type="radio" name="p6" value="Más de $50,000 MXN"> Más de $50,000 MXN</label>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
       <div class="error" id="err1">Por favor, responda todas las preguntas de esta sección.</div>
     </section>
-
-    <!-- PÁGINA 2: hábitos -->
-    <section class="pagina oculto" data-pagina="2">
+<section class="pagina oculto" data-pagina="2">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 2 · Hábitos y barreras</div>
-        <div class="pregunta">7. ¿Con qué frecuencia consumen arroz en su hogar?</div>
-        <label class="opcion"><input type="radio" name="p7" value="Diariamente"> Diariamente</label>
-        <label class="opcion"><input type="radio" name="p7" value="3 a 5 veces por semana"> 3 a 5 veces por semana</label>
-        <label class="opcion"><input type="radio" name="p7" value="1 a 2 veces por semana"> 1 a 2 veces por semana</label>
-        <label class="opcion"><input type="radio" name="p7" value="Cada quincena"> Cada quincena</label>
-        <label class="opcion"><input type="radio" name="p7" value="Casi nunca o nunca"> Casi nunca o nunca</label>
-        <div class="pregunta">8. ¿Con qué frecuencia consumen frijol en su hogar?</div>
-        <label class="opcion"><input type="radio" name="p8" value="Diariamente"> Diariamente</label>
-        <label class="opcion"><input type="radio" name="p8" value="3 a 5 veces por semana"> 3 a 5 veces por semana</label>
-        <label class="opcion"><input type="radio" name="p8" value="1 a 2 veces por semana"> 1 a 2 veces por semana</label>
-        <label class="opcion"><input type="radio" name="p8" value="Cada quincena"> Cada quincena</label>
-        <label class="opcion"><input type="radio" name="p8" value="Casi nunca o nunca"> Casi nunca o nunca</label>
-        <div class="pregunta">9. ¿En qué canal compra habitualmente la despensa?</div>
-        <label class="opcion"><input type="radio" name="p9" value="Walmart / Walmart Express"> Walmart / Walmart Express</label>
-        <label class="opcion"><input type="radio" name="p9" value="Soriana"> Soriana</label>
-        <label class="opcion"><input type="radio" name="p9" value="Alsuper"> Alsuper</label>
-        <label class="opcion"><input type="radio" name="p9" value="Chedraui o La Comer"> Chedraui o La Comer</label>
-        <label class="opcion"><input type="radio" name="p9" value="Apps de supermercado"> Apps de supermercado (Jüsto, Walmart en Línea)</label>
-        <label class="opcion"><input type="radio" name="p9" value="Marketplaces"> Marketplaces (Amazon, Mercado Libre)</label>
-        <label class="opcion"><input type="radio" name="p9" value="Tienda de la esquina"> Tienda de la esquina o mercado tradicional</label>
-        <div class="pregunta">10. ¿Qué marca de frijol y arroz compra con mayor frecuencia?</div>
-        <label class="opcion"><input type="radio" name="p10" value="Verde Valle"> Verde Valle</label>
-        <label class="opcion"><input type="radio" name="p10" value="SOS"> SOS</label>
-        <label class="opcion"><input type="radio" name="p10" value="Schettino"> Schettino</label>
-        <label class="opcion"><input type="radio" name="p10" value="Marcas propias"> Marcas propias (Aurrera, Great Value)</label>
-        <label class="opcion"><input type="radio" name="p10" value="A granel"> A granel sin marca</label>
-        <label class="opcion"><input type="radio" name="p10" value="Otra marca"> Otra marca</label>
-        <div class="pregunta">11. ¿Cuánto gasta su hogar quincenalmente en granos básicos y cereales?</div>
-        <label class="opcion"><input type="radio" name="p11" value="Menos de $100"> Menos de $100 MXN</label>
-        <label class="opcion"><input type="radio" name="p11" value="$101 a $200"> $101 a $200 MXN</label>
-        <label class="opcion"><input type="radio" name="p11" value="$201 a $350"> $201 a $350 MXN</label>
-        <label class="opcion"><input type="radio" name="p11" value="Más de $350"> Más de $350 MXN</label>
-        <div class="pregunta">12. ¿Cuáles son las principales dificultades al cocinar frijol seco entre semana?</div>
-        <div class="nota">Elija máximo 2.</div>
-        <label class="opcion"><input type="checkbox" name="p12" value="Tarda mucho (unas 2 horas)"> Tarda mucho (unas 2 horas)</label>
-        <label class="opcion"><input type="checkbox" name="p12" value="Se me olvida ponerlo a remojar"> Se me olvida ponerlo a remojar</label>
-        <label class="opcion"><input type="checkbox" name="p12" value="Gasta mucho gas o energía"> Gasta mucho gas o energía</label>
-        <label class="opcion"><input type="checkbox" name="p12" value="Poco práctico para porciones pequeñas"> Poco práctico para porciones pequeñas</label>
-        <label class="opcion"><input type="checkbox" name="p12" value="Ninguna"> Ninguna, estoy acostumbrado al proceso</label>
+<div class="seccion-titulo">Sección 2: Hábitos y barreras</div><div class="pregunta">7. ¿Con qué frecuencia consumen arroz en su hogar?</div>
+<label class="opcion"><input type="radio" name="p7" value="Diariamente"> Diariamente</label>
+<label class="opcion"><input type="radio" name="p7" value="3 a 5 veces por semana"> 3 a 5 veces por semana</label>
+<label class="opcion"><input type="radio" name="p7" value="1 a 2 veces por semana"> 1 a 2 veces por semana</label>
+<label class="opcion"><input type="radio" name="p7" value="Cada quincena"> Cada quincena</label>
+<label class="opcion"><input type="radio" name="p7" value="Casi nunca o nunca"> Casi nunca o nunca</label><div class="pregunta">8. ¿Con qué frecuencia consumen frijol en su hogar?</div>
+<label class="opcion"><input type="radio" name="p8" value="Diariamente"> Diariamente</label>
+<label class="opcion"><input type="radio" name="p8" value="3 a 5 veces por semana"> 3 a 5 veces por semana</label>
+<label class="opcion"><input type="radio" name="p8" value="1 a 2 veces por semana"> 1 a 2 veces por semana</label>
+<label class="opcion"><input type="radio" name="p8" value="Cada quincena"> Cada quincena</label>
+<label class="opcion"><input type="radio" name="p8" value="Casi nunca o nunca"> Casi nunca o nunca</label><div class="pregunta">9. ¿En qué canal o tienda realiza habitualmente la compra principal de abarrotes?</div>
+<label class="opcion"><input type="radio" name="p9" value="Walmart"> Walmart</label>
+<label class="opcion"><input type="radio" name="p9" value="Soriana"> Soriana</label>
+<label class="opcion"><input type="radio" name="p9" value="Alsuper"> Alsuper</label>
+<label class="opcion"><input type="radio" name="p9" value="Chedraui o La Comer"> Chedraui o La Comer</label>
+<label class="opcion"><input type="radio" name="p9" value="Apps de supermercado (Jüsto, Walmart en Línea)"> Apps de supermercado (Jüsto, Walmart en Línea)</label>
+<label class="opcion"><input type="radio" name="p9" value="Marketplaces (Amazon, Mercado Libre)"> Marketplaces (Amazon, Mercado Libre)</label>
+<label class="opcion"><input type="radio" name="p9" value="Mercado tradicional o tiendita"> Mercado tradicional o tiendita</label><div class="pregunta">10. ¿Qué marca de frijol y arroz adquiere con mayor frecuencia?</div>
+<label class="opcion"><input type="radio" name="p10" value="Verde Valle"> Verde Valle</label>
+<label class="opcion"><input type="radio" name="p10" value="SOS"> SOS</label>
+<label class="opcion"><input type="radio" name="p10" value="Schettino"> Schettino</label>
+<label class="opcion"><input type="radio" name="p10" value="Marcas propias (Aurrera, Great Value)"> Marcas propias (Aurrera, Great Value)</label>
+<label class="opcion"><input type="radio" name="p10" value="A granel sin marca"> A granel sin marca</label>
+<label class="opcion"><input type="radio" name="p10" value="Otra marca"> Otra marca</label><div class="pregunta">11. En promedio, ¿cuánto gasta su hogar quincenalmente en granos básicos y cereales (arroz, frijol, lentejas)?</div>
+<label class="opcion"><input type="radio" name="p11" value="Menos de $100 MXN"> Menos de $100 MXN</label>
+<label class="opcion"><input type="radio" name="p11" value="$101 a $200 MXN"> $101 a $200 MXN</label>
+<label class="opcion"><input type="radio" name="p11" value="$201 a $350 MXN"> $201 a $350 MXN</label>
+<label class="opcion"><input type="radio" name="p11" value="Más de $350 MXN"> Más de $350 MXN</label><div class="pregunta">12. ¿Cuáles son las principales dificultades al cocinar frijol seco entre semana? (Máximo 2)</div>
+<div class="nota">Elija máximo 2 opciones.</div>
+<label class="opcion"><input type="checkbox" name="p12" value="El tiempo de cocción es muy largo (alrededor de 2 horas)"> El tiempo de cocción es muy largo (alrededor de 2 horas)</label>
+<label class="opcion"><input type="checkbox" name="p12" value="Se me olvida ponerlo a remojar"> Se me olvida ponerlo a remojar</label>
+<label class="opcion"><input type="checkbox" name="p12" value="Alto consumo de gas o energía"> Alto consumo de gas o energía</label>
+<label class="opcion"><input type="checkbox" name="p12" value="Poco práctico para porciones pequeñas"> Poco práctico para porciones pequeñas</label>
+<label class="opcion"><input type="checkbox" name="p12" value="Ninguna, estoy acostumbrado al proceso tradicional"> Ninguna, estoy acostumbrado al proceso tradicional</label>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
-      <div class="error" id="err2">Responda todas las preguntas y no marque más de 2 dificultades.</div>
+      <div class="error" id="err2">Responda todas las preguntas. En la 12, elija de 1 a 2 opciones.</div>
     </section>
-
-    <!-- PÁGINA 3: concepto (escalas 1 a 5) -->
-    <section class="pagina oculto" data-pagina="3">
+<section class="pagina oculto" data-pagina="3">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 3 · Concepto Dúo 2 en 1</div>
-        <div class="nota">Le presentamos el «Dúo Despensa Verde Valle 2 en 1»: un paquete de 1.0 kg con 700 g de frijol negro Querétaro y 300 g de arroz precocido blanco, en compartimentos separados.</div>
-        <div class="pregunta">13. ¿Qué tan atractivo le parece este concepto?</div>
-        <div class="escala" data-nombre="p13"></div><div class="extremos"><span>Nada atractivo</span><span>Muy atractivo</span></div>
-        <div class="pregunta">14. El empaque tiene doble cierre resellable independiente, para cocer el frijol una vez por semana y preparar el arroz en 5 minutos cada día. ¿Qué tan útil le resulta para organizar sus comidas semanales?</div>
-        <div class="escala" data-nombre="p14"></div><div class="extremos"><span>Nada útil</span><span>Muy útil</span></div>
-        <div class="pregunta">15. ¿Qué valor le da a que el arroz precocido se prepare en 5 minutos y esté fortificado con hierro, ácido fólico y vitaminas B1 y B3?</div>
-        <div class="escala" data-nombre="p15"></div><div class="extremos"><span>Sin valor</span><span>Valor altísimo</span></div>
-        <div class="pregunta">16. ¿Qué tan importante es que el paquete esté libre de sodio añadido y no tenga sellos de advertencia NOM-051?</div>
-        <div class="escala" data-nombre="p16"></div><div class="extremos"><span>Nada importante</span><span>Muy importante</span></div>
-        <div class="pregunta">17. ¿Qué nivel de confianza le inspira la marca Verde Valle como garantía de calidad e inocuidad?</div>
-        <div class="escala" data-nombre="p17"></div><div class="extremos"><span>Ninguna</span><span>Total</span></div>
-        <div class="pregunta">18. ¿Qué tan probable es que use el código QR del empaque para acceder a un recetario de platillos de menos de 30 minutos?</div>
-        <div class="escala" data-nombre="p18"></div><div class="extremos"><span>Nada probable</span><span>Muy probable</span></div>
+<div class="seccion-titulo">Sección 3: Concepto Dúo 2 en 1</div><div class="nota">Para las preguntas 13 a 18 use la escala de 1 a 5.</div><div class="pregunta">13. Le presentamos el «Dúo Despensa Verde Valle 2 en 1»: un paquete de 1.0 kg con 700 g de frijol negro Querétaro y 300 g de arroz precocido blanco, en compartimentos separados. ¿Qué tan atractivo le parece? (1 = Nada atractivo, 5 = Muy atractivo)</div>
+<div class="escala" data-nombre="p13"><label><input type="radio" name="p13" value="1"><span>1</span></label><label><input type="radio" name="p13" value="2"><span>2</span></label><label><input type="radio" name="p13" value="3"><span>3</span></label><label><input type="radio" name="p13" value="4"><span>4</span></label><label><input type="radio" name="p13" value="5"><span>5</span></label></div><div class="extremos"><span>Nada atractivo</span><span>Muy atractivo</span></div><div class="pregunta">14. El empaque tiene doble cierre resellable independiente, para cocer el frijol una vez por semana y preparar el arroz en 5 minutos cada día. ¿Qué tan útil le resulta para organizar sus comidas semanales? (1 = Nada útil, 5 = Muy útil)</div>
+<div class="escala" data-nombre="p14"><label><input type="radio" name="p14" value="1"><span>1</span></label><label><input type="radio" name="p14" value="2"><span>2</span></label><label><input type="radio" name="p14" value="3"><span>3</span></label><label><input type="radio" name="p14" value="4"><span>4</span></label><label><input type="radio" name="p14" value="5"><span>5</span></label></div><div class="extremos"><span>Nada útil</span><span>Muy útil</span></div><div class="pregunta">15. ¿Qué valor le da a que el arroz precocido se prepare en 5 minutos y esté fortificado con hierro, ácido fólico y vitaminas B1 y B3? (1 = Sin valor, 5 = Valor altísimo)</div>
+<div class="escala" data-nombre="p15"><label><input type="radio" name="p15" value="1"><span>1</span></label><label><input type="radio" name="p15" value="2"><span>2</span></label><label><input type="radio" name="p15" value="3"><span>3</span></label><label><input type="radio" name="p15" value="4"><span>4</span></label><label><input type="radio" name="p15" value="5"><span>5</span></label></div><div class="extremos"><span>Sin valor</span><span>Valor altísimo</span></div><div class="pregunta">16. ¿Qué tan importante es que el paquete esté libre de sodio añadido y no tenga sellos de advertencia NOM-051? (1 = Nada importante, 5 = Muy importante)</div>
+<div class="escala" data-nombre="p16"><label><input type="radio" name="p16" value="1"><span>1</span></label><label><input type="radio" name="p16" value="2"><span>2</span></label><label><input type="radio" name="p16" value="3"><span>3</span></label><label><input type="radio" name="p16" value="4"><span>4</span></label><label><input type="radio" name="p16" value="5"><span>5</span></label></div><div class="extremos"><span>Nada importante</span><span>Muy importante</span></div><div class="pregunta">17. ¿Qué nivel de confianza le inspira la marca Verde Valle como garantía de calidad e inocuidad? (1 = Ninguna, 5 = Total)</div>
+<div class="escala" data-nombre="p17"><label><input type="radio" name="p17" value="1"><span>1</span></label><label><input type="radio" name="p17" value="2"><span>2</span></label><label><input type="radio" name="p17" value="3"><span>3</span></label><label><input type="radio" name="p17" value="4"><span>4</span></label><label><input type="radio" name="p17" value="5"><span>5</span></label></div><div class="extremos"><span>Ninguna</span><span>Total</span></div><div class="pregunta">18. ¿Qué tan probable es que use el código QR del empaque para acceder a un recetario de platillos rápidos (menos de 30 minutos)? (1 = Nada probable, 5 = Muy probable)</div>
+<div class="escala" data-nombre="p18"><label><input type="radio" name="p18" value="1"><span>1</span></label><label><input type="radio" name="p18" value="2"><span>2</span></label><label><input type="radio" name="p18" value="3"><span>3</span></label><label><input type="radio" name="p18" value="4"><span>4</span></label><label><input type="radio" name="p18" value="5"><span>5</span></label></div><div class="extremos"><span>Nada probable</span><span>Muy probable</span></div>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
       <div class="error" id="err3">Responda todas las preguntas.</div>
     </section>
-
-    <!-- PÁGINA 4: precio -->
-    <section class="pagina oculto" data-pagina="4">
+<section class="pagina oculto" data-pagina="4">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 4 · Precio</div>
-        <div class="pregunta">19. ¿A qué precio (MXN) consideraría que este paquete es tan barato que dudaría de su calidad?</div>
-        <input type="number" min="1" step="1" name="p19" placeholder="Escriba solo el número">
-        <div class="pregunta">20. ¿A qué precio (MXN) consideraría que es una excelente oferta, una compra muy conveniente?</div>
-        <input type="number" min="1" step="1" name="p20" placeholder="Escriba solo el número">
-        <div class="pregunta">21. ¿A qué precio (MXN) empezaría a ser caro, aunque aún lo compraría por sus beneficios?</div>
-        <input type="number" min="1" step="1" name="p21" placeholder="Escriba solo el número">
-        <div class="pregunta">22. ¿A qué precio (MXN) sería demasiado caro, al grado de que no lo compraría?</div>
-        <input type="number" min="1" step="1" name="p22" placeholder="Escriba solo el número">
-        <div class="pregunta">23. El precio sugerido es de $68.90 MXN: un ahorro real del 12.12 % (9.50 MXN menos) frente a comprar frijol y arroz por separado ($78.40 MXN). ¿Cómo evalúa esta propuesta de precio?</div>
-        <div class="escala" data-nombre="p23"></div><div class="extremos"><span>Muy mala oferta</span><span>Excelente oferta</span></div>
+<div class="seccion-titulo">Sección 4: Precio</div><div class="pregunta">19. ¿A qué precio (MXN) consideraría que el Dúo 2 en 1 de 1.0 kg es TAN BARATO que dudaría de su calidad?</div>
+<div class="nota">Anote solo el número, sin símbolos.</div><input type="number" min="1" step="1" name="p19" placeholder="Escriba solo el número">
+<div class="pregunta">20. ¿A qué precio (MXN) consideraría que el Dúo 2 en 1 es una EXCELENTE OFERTA, una compra muy conveniente?</div>
+<div class="nota">Anote solo el número, sin símbolos.</div><input type="number" min="1" step="1" name="p20" placeholder="Escriba solo el número">
+<div class="pregunta">21. ¿A qué precio (MXN) empezaría a ser CARO, aunque aún lo compraría por sus beneficios?</div>
+<div class="nota">Anote solo el número, sin símbolos.</div><input type="number" min="1" step="1" name="p21" placeholder="Escriba solo el número">
+<div class="pregunta">22. ¿A qué precio (MXN) sería DEMASIADO CARO, al grado de que no lo compraría?</div>
+<div class="nota">Anote solo el número, sin símbolos.</div><input type="number" min="1" step="1" name="p22" placeholder="Escriba solo el número">
+<div class="pregunta">23. El precio sugerido es de $68.90 MXN, un ahorro del 12.12 % (9.50 MXN menos) frente a comprar frijol y arroz por separado ($78.40 MXN). ¿Cómo evalúa esta propuesta de precio? (1 = Muy mala oferta, 5 = Excelente oferta)</div>
+<div class="escala" data-nombre="p23"><label><input type="radio" name="p23" value="1"><span>1</span></label><label><input type="radio" name="p23" value="2"><span>2</span></label><label><input type="radio" name="p23" value="3"><span>3</span></label><label><input type="radio" name="p23" value="4"><span>4</span></label><label><input type="radio" name="p23" value="5"><span>5</span></label></div><div class="extremos"><span>Muy mala oferta</span><span>Excelente oferta</span></div>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
       <div class="error" id="err4">Complete las cuatro cifras (solo números) y la pregunta 23.</div>
     </section>
-
-    <!-- PÁGINA 5: sustentabilidad e intención -->
-    <section class="pagina oculto" data-pagina="5">
+<section class="pagina oculto" data-pagina="5">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 5 · Sustentabilidad e intención de compra</div>
-        <div class="pregunta">24. El empaque del Dúo 2 en 1 es reciclable y se elabora en alianza con ECOCE. ¿Qué tan relevante es este atributo para su decisión de compra?</div>
-        <div class="escala" data-nombre="p24"></div><div class="extremos"><span>Nada relevante</span><span>Muy relevante</span></div>
-        <div class="pregunta">25. ¿Estaría dispuesto a pagar un sobreprecio por un empaque de granos certificado como reciclable?</div>
-        <label class="opcion"><input type="radio" name="p25" value="No estaría dispuesto a pagar más"> No estaría dispuesto a pagar más</label>
-        <label class="opcion"><input type="radio" name="p25" value="Sí, hasta 3 % más"> Sí, hasta 3 % más</label>
-        <label class="opcion"><input type="radio" name="p25" value="Sí, entre 4 % y 7 % más"> Sí, entre 4 % y 7 % más</label>
-        <label class="opcion"><input type="radio" name="p25" value="Sí, entre 8 % y 10 % más"> Sí, entre 8 % y 10 % más</label>
-        <label class="opcion"><input type="radio" name="p25" value="Sí, más del 10 %"> Sí, más del 10 %</label>
-        <div class="pregunta">26. ¿Qué tanto influye saber que el frijol negro se abastece de agricultores mexicanos bajo un marco de comercialización justa respaldado por SADER?</div>
-        <div class="escala" data-nombre="p26"></div><div class="extremos"><span>No influye nada</span><span>Influye totalmente</span></div>
-        <div class="pregunta">27. Si encuentra el Dúo 2 en 1 (1.0 kg) en su tienda habitual a $68.90 MXN, ¿cuál es su intención de compra en los próximos 30 días?</div>
-        <div class="escala" data-nombre="p27"></div><div class="extremos"><span>Definitivamente no</span><span>Definitivamente sí</span></div>
-        <div class="pregunta">28. Si lo probara y quedara satisfecho, ¿con qué probabilidad lo incorporaría de forma regular en la compra de su despensa quincenal?</div>
-        <div class="escala" data-nombre="p28"></div><div class="extremos"><span>Muy baja</span><span>Muy alta</span></div>
+<div class="seccion-titulo">Sección 5: Sustentabilidad, origen e intención de compra</div><div class="pregunta">24. El empaque del Dúo 2 en 1 es reciclable y se elabora en alianza con ECOCE. ¿Qué tan relevante es este atributo para su decisión? (1 = Nada relevante, 5 = Muy relevante)</div>
+<div class="escala" data-nombre="p24"><label><input type="radio" name="p24" value="1"><span>1</span></label><label><input type="radio" name="p24" value="2"><span>2</span></label><label><input type="radio" name="p24" value="3"><span>3</span></label><label><input type="radio" name="p24" value="4"><span>4</span></label><label><input type="radio" name="p24" value="5"><span>5</span></label></div><div class="extremos"><span>Nada relevante</span><span>Muy relevante</span></div><div class="pregunta">25. ¿Estaría dispuesto a pagar un sobreprecio por un empaque de granos certificado como reciclable?</div>
+<label class="opcion"><input type="radio" name="p25" value="No estaría dispuesto a pagar más"> No estaría dispuesto a pagar más</label>
+<label class="opcion"><input type="radio" name="p25" value="Sí, hasta 3 % más"> Sí, hasta 3 % más</label>
+<label class="opcion"><input type="radio" name="p25" value="Sí, entre 4 % y 7 % más"> Sí, entre 4 % y 7 % más</label>
+<label class="opcion"><input type="radio" name="p25" value="Sí, entre 8 % y 10 % más"> Sí, entre 8 % y 10 % más</label>
+<label class="opcion"><input type="radio" name="p25" value="Sí, más de 10 %"> Sí, más de 10 %</label><div class="pregunta">26. ¿Qué tanto influye saber que el frijol negro se abastece de agricultores mexicanos bajo un marco de comercialización justa respaldado por SADER? (1 = No influye nada, 5 = Influye totalmente)</div>
+<div class="escala" data-nombre="p26"><label><input type="radio" name="p26" value="1"><span>1</span></label><label><input type="radio" name="p26" value="2"><span>2</span></label><label><input type="radio" name="p26" value="3"><span>3</span></label><label><input type="radio" name="p26" value="4"><span>4</span></label><label><input type="radio" name="p26" value="5"><span>5</span></label></div><div class="extremos"><span>No influye nada</span><span>Influye totalmente</span></div><div class="pregunta">27. Si encuentra el Dúo 2 en 1 (1.0 kg) en su tienda habitual a $68.90 MXN, ¿cuál es su intención de compra en los próximos 30 días?</div>
+<div class="nota">1 = Definitivamente NO · 2 = Probablemente NO · 3 = Podría o no (indeciso) · 4 = Probablemente SÍ · 5 = Definitivamente SÍ</div>
+<div class="escala" data-nombre="p27"><label><input type="radio" name="p27" value="1"><span>1</span></label><label><input type="radio" name="p27" value="2"><span>2</span></label><label><input type="radio" name="p27" value="3"><span>3</span></label><label><input type="radio" name="p27" value="4"><span>4</span></label><label><input type="radio" name="p27" value="5"><span>5</span></label></div><div class="extremos"><span>Definitivamente NO</span><span>Definitivamente SÍ</span></div><div class="pregunta">28. Si lo probara y quedara satisfecho, ¿con qué probabilidad lo incorporaría de forma regular en su despensa quincenal? (1 = Muy baja, 5 = Muy alta)</div>
+<div class="escala" data-nombre="p28"><label><input type="radio" name="p28" value="1"><span>1</span></label><label><input type="radio" name="p28" value="2"><span>2</span></label><label><input type="radio" name="p28" value="3"><span>3</span></label><label><input type="radio" name="p28" value="4"><span>4</span></label><label><input type="radio" name="p28" value="5"><span>5</span></label></div><div class="extremos"><span>Muy baja</span><span>Muy alta</span></div>
       </div>
       <button type="button" class="boton" data-siguiente>Siguiente</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
       <div class="error" id="err5">Responda todas las preguntas.</div>
     </section>
-
-    <!-- PÁGINA 6: medios y extensiones -->
-    <section class="pagina oculto" data-pagina="6">
+<section class="pagina oculto" data-pagina="6">
       <div class="tarjeta">
-        <div class="seccion-titulo">Sección 6 · Medios y extensiones 2027</div>
-        <div class="pregunta">29. ¿Por qué plataformas consulta recetas de cocina, menús o promociones de abarrotes?</div>
-        <div class="nota">Puede elegir varias.</div>
-        <label class="opcion"><input type="checkbox" name="p29" value="Facebook"> Facebook</label>
-        <label class="opcion"><input type="checkbox" name="p29" value="Instagram"> Instagram</label>
-        <label class="opcion"><input type="checkbox" name="p29" value="TikTok"> TikTok</label>
-        <label class="opcion"><input type="checkbox" name="p29" value="YouTube"> YouTube</label>
-        <label class="opcion"><input type="checkbox" name="p29" value="Apps de supermercado o e-commerce"> Apps de supermercado o e-commerce</label>
-        <label class="opcion"><input type="checkbox" name="p29" value="Sitios web de recetas"> Sitios web de recetas</label>
-        <div class="pregunta">30. ¿Le interesaría enviar su propia receta familiar rápida con el código QR para figurar en el recetario de la marca?</div>
-        <label class="opcion"><input type="radio" name="p30" value="Sí me interesaría"> Sí me interesaría</label>
-        <label class="opcion"><input type="radio" name="p30" value="Tal vez"> Tal vez</label>
-        <label class="opcion"><input type="radio" name="p30" value="No me interesaría"> No me interesaría</label>
-        <div class="pregunta">31. De las siguientes innovaciones proyectadas para 2027, elija la que más le gustaría encontrar en tienda.</div>
-        <label class="opcion"><input type="radio" name="p31" value="Frijol negro precocido en seco (12 a 15 min)"> Frijol negro precocido en seco (12 a 15 minutos)</label>
-        <label class="opcion"><input type="radio" name="p31" value="Kit Comida Completa 5 Min"> Kit Comida Completa 5 Min (arroz 300 g + frijol en pouch 430 g)</label>
-        <label class="opcion"><input type="radio" name="p31" value="Bases para bowl"> Bases Ancestrales para Bowl (arroz, frijol, chía y quinoa)</label>
-        <label class="opcion"><input type="radio" name="p31" value="Multipack 1.8 kg"> Multipack Familiar 1.8 kg con suscripción</label>
+<div class="seccion-titulo">Sección 6: Medios y extensiones 2027</div><div class="pregunta">29. ¿En qué plataformas consulta recetas, menús o promociones de abarrotes? (Selección múltiple)</div>
+<div class="nota">Puede elegir varias opciones.</div>
+<label class="opcion"><input type="checkbox" name="p29" value="Facebook"> Facebook</label>
+<label class="opcion"><input type="checkbox" name="p29" value="Instagram"> Instagram</label>
+<label class="opcion"><input type="checkbox" name="p29" value="TikTok"> TikTok</label>
+<label class="opcion"><input type="checkbox" name="p29" value="YouTube"> YouTube</label>
+<label class="opcion"><input type="checkbox" name="p29" value="Apps de supermercado o e-commerce"> Apps de supermercado o e-commerce</label>
+<label class="opcion"><input type="checkbox" name="p29" value="Sitios web de recetas"> Sitios web de recetas</label><div class="pregunta">30. ¿Le interesaría enviar su propia receta familiar rápida con el código QR para figurar en el recetario de la marca?</div>
+<label class="opcion"><input type="radio" name="p30" value="Sí me interesaría"> Sí me interesaría</label>
+<label class="opcion"><input type="radio" name="p30" value="Tal vez"> Tal vez</label>
+<label class="opcion"><input type="radio" name="p30" value="No me interesaría"> No me interesaría</label><div class="pregunta">31. De las siguientes innovaciones proyectadas para 2027, elija la que más le gustaría encontrar en tienda (una sola opción):</div>
+<label class="opcion"><input type="radio" name="p31" value="Frijol negro precocido en seco (listo en 12 a 15 minutos sin remojo)"> Frijol negro precocido en seco (listo en 12 a 15 minutos sin remojo)</label>
+<label class="opcion"><input type="radio" name="p31" value="Kit Comida Completa 5 Min (arroz precocido 300 g + frijol en pouch 430 g)"> Kit Comida Completa 5 Min (arroz precocido 300 g + frijol en pouch 430 g)</label>
+<label class="opcion"><input type="radio" name="p31" value="Bases Ancestrales para Bowl (arroz, frijol, chía y quinoa)"> Bases Ancestrales para Bowl (arroz, frijol, chía y quinoa)</label>
+<label class="opcion"><input type="radio" name="p31" value="Multipack Familiar 1.8 kg (arroz 900 g + frijol 900 g) con suscripción"> Multipack Familiar 1.8 kg (arroz 900 g + frijol 900 g) con suscripción</label>
       </div>
       <button type="button" class="boton" data-siguiente>Enviar encuesta</button>
       <button type="button" class="boton boton-sec" data-anterior>Anterior</button>
       <div class="error" id="err6">Responda las preguntas 30 y 31 y elija al menos una opción en la 29.</div>
     </section>
-
-    <!-- PÁGINA FINAL -->
-    <section class="pagina oculto" data-pagina="7">
+<section class="pagina oculto" data-pagina="7">
       <div class="tarjeta fin">
         <h2>Gracias por su participación</h2>
         <p class="intro">Su respuesta fue registrada.</p>
       </div>
     </section>
-
-    <section class="pagina oculto" data-pagina="fin-no">
+<section class="pagina oculto" data-pagina="fin-no">
       <div class="tarjeta fin">
         <h2>Gracias</h2>
-        <p class="intro">Esta encuesta es para personas responsables de las compras de despensa en su hogar. Gracias por su tiempo.</p>
+        <p class="intro">Gracias por su tiempo. Esta encuesta es para personas responsables de las compras de despensa de su hogar, de 25 a 54 años.</p>
       </div>
     </section>
 
@@ -265,162 +223,104 @@
 </main>
 
 <script>
-/* ==========================================================
-   CONFIGURACIÓN
-   Pegue aquí la URL del script de Google Apps Script (ver instrucciones).
-   Si la deja vacía, el botón descarga un archivo CSV que Excel abre.
-   ========================================================== */
-const URL_APPS_SCRIPT = "https://script.google.com/a/macros/ucaribe.edu.mx/s/AKfycbyFhL8zQ9GdweRQwrVBEUovZk3rA0bw6wtZMdvhifOcMajY2yzJ-jmaxY9l0TY4eV3l/exec";
-
-const ESCALAS = ["p13","p14","p15","p16","p17","p18","p23","p24","p26","p27","p28"];
+const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbxgHkeMWEWJWfHLlwtYrrDNmYwS0zGG79twZI0zrugqV8WjmL9nIMkH8QwDvs8LoB1AIg/exec";
+const NINGUNA_P12 = "Ninguna, estoy acostumbrado al proceso tradicional";
+const NUMEROS = ["p19", "p20", "p21", "p22"];
 const paginas = Array.from(document.querySelectorAll(".pagina"));
 let actual = 0;
-
-// Construye las escalas 1 a 5 como botones
-document.querySelectorAll(".escala").forEach(bloque => {
-  const nombre = bloque.dataset.nombre;
-  for (let v = 1; v <= 5; v++) {
-    const lab = document.createElement("label");
-    lab.innerHTML = `<input type="radio" name="${nombre}" value="${v}"><span>${v}</span>`;
-    bloque.appendChild(lab);
-  }
-});
 
 function mostrar(i) {
   paginas.forEach(p => p.classList.add("oculto"));
   paginas[i].classList.remove("oculto");
   actual = i;
-  const total = 7;
-  const avance = Math.min(i / total, 1) * 100;
-  document.getElementById("barra").style.width = avance + "%";
+  document.getElementById("barra").style.width = (Math.min(i / 7, 1) * 100) + "%";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-function marcados(nombre) {
-  return Array.from(document.querySelectorAll(`[name="${nombre}"]:checked`)).map(e => e.value);
+function finNo() { return paginas.findIndex(p => p.dataset.pagina === "fin-no"); }
+function marcados(n) {
+  return Array.from(document.querySelectorAll(`[name="${n}"]:checked`)).map(e => e.value);
 }
+function unica(n) { return marcados(n).length === 1; }
 
-function validar(pagina) {
-  const dataPag = pagina.dataset.pagina;
-  let ok = true;
-
-  if (dataPag === "0") ok = marcados("p0").length === 1;
-
-  if (dataPag === "1") {
-    ok = ["p1","p2","p3","p4","p5","p6"].every(n => marcados(n).length === 1);
+function validar(pag) {
+  const d = pag.dataset.pagina;
+  if (d === "0") return unica("p0");
+  if (d === "1") return ["p1","p2","p3","p4","p5","p6"].every(unica);
+  if (d === "2") {
+    const ok = ["p7","p8","p9","p10","p11"].every(unica);
+    const n = marcados("p12").length;
+    return ok && n >= 1 && n <= 2;
   }
-
-  if (dataPag === "2") {
-    ok = ["p7","p8","p9","p10","p11"].every(n => marcados(n).length === 1);
-    const d = marcados("p12");
-    ok = ok && d.length >= 1 && d.length <= 2;
-  }
-
-  if (dataPag === "3") {
-    ok = ["p13","p14","p15","p16","p17","p18"].every(n => marcados(n).length === 1);
-  }
-
-  if (dataPag === "4") {
-    const cifras = ["p19","p20","p21","p22"].every(n => {
-      const v = pagina.querySelector(`[name="${n}"]`).value;
+  if (d === "3") return ["p13","p14","p15","p16","p17","p18"].every(unica);
+  if (d === "4") {
+    const cifras = NUMEROS.every(n => {
+      const v = pag.querySelector(`[name="${n}"]`).value;
       return v !== "" && Number(v) > 0;
     });
-    ok = cifras && marcados("p23").length === 1;
+    return cifras && unica("p23");
   }
+  if (d === "5") return ["p24","p25","p26","p27","p28"].every(unica);
+  if (d === "6") return marcados("p29").length >= 1 && unica("p30") && unica("p31");
+  return true;
+}
+function mostrarError(pag) { const e = pag.querySelector(".error"); if (e) e.style.display = "block"; }
+function ocultarErrores() { document.querySelectorAll(".error").forEach(e => e.style.display = "none"); }
 
-  if (dataPag === "5") {
-    ok = ["p24","p25","p26","p27","p28"].every(n => marcados(n).length === 1);
+// Pregunta 12: máximo 2 opciones; "Ninguna" es excluyente
+const opcionesP12 = Array.from(document.querySelectorAll('[name="p12"]'));
+opcionesP12.forEach(cb => cb.addEventListener("change", () => {
+  if (cb.checked && cb.value === NINGUNA_P12) {
+    opcionesP12.forEach(o => { if (o !== cb) o.checked = false; });
+  } else if (cb.checked) {
+    opcionesP12.forEach(o => { if (o.value === NINGUNA_P12) o.checked = false; });
   }
-
-  if (dataPag === "6") {
-    ok = marcados("p29").length >= 1 && marcados("p30").length === 1 && marcados("p31").length === 1;
+  if (opcionesP12.filter(o => o.checked).length > 2) {
+    cb.checked = false;
+    alert("Puede elegir máximo 2 opciones en la pregunta 12.");
   }
+}));
 
-  return ok;
-}
-
-function mostrarError(pagina) {
-  const e = pagina.querySelector(".error");
-  if (e) e.style.display = "block";
-}
-function ocultarErrores() {
-  document.querySelectorAll(".error").forEach(e => e.style.display = "none");
-}
-
-// Botón Siguiente
+// Botones Siguiente / Anterior
 document.querySelectorAll("[data-siguiente]").forEach(btn => {
   btn.addEventListener("click", () => {
     ocultarErrores();
     const pag = paginas[actual];
+    const d = pag.dataset.pagina;
+
+    if (d === "0" && marcados("p0")[0] === "No") { mostrar(finNo()); return; }
+    if (d === "1" && marcados("p1")[0] === "No") { mostrar(finNo()); return; }
+
     if (!validar(pag)) { mostrarError(pag); return; }
 
-    // Saltos de la pregunta 0 y 1
-    const dataPag = pag.dataset.pagina;
-    if (dataPag === "0") {
-      if (marcados("p0")[0] === "No") { mostrar(paginas.findIndex(p => p.dataset.pagina === "fin-no")); return; }
-      mostrar(1); return;
-    }
-    if (dataPag === "1") {
-      const p1 = marcados("p1")[0];
+    if (d === "0") { mostrar(1); return; }
+    if (d === "1") {
       const edad = marcados("p2")[0];
-      if (p1 === "No" || edad === "Menor de 25" || edad === "55 o más") {
-        mostrar(paginas.findIndex(p => p.dataset.pagina === "fin-no")); return;
-      }
+      if (edad === "Menor de 25 años" || edad === "55 años o más") { mostrar(finNo()); return; }
       mostrar(2); return;
     }
-    if (dataPag === "6") { enviar(); return; }
+    if (d === "6") { enviar(); return; }
     mostrar(actual + 1);
   });
 });
-
 document.querySelectorAll("[data-anterior]").forEach(btn => {
   btn.addEventListener("click", () => { ocultarErrores(); mostrar(Math.max(0, actual - 1)); });
 });
 
 function recolectar() {
-  const datos = {
-    fecha: new Date().toISOString(),
-    p0: marcados("p0")[0] || "",
-    p1: marcados("p1")[0] || "",
-    p2: marcados("p2")[0] || "",
-    p3: marcados("p3")[0] || "",
-    p4: marcados("p4")[0] || "",
-    p5: marcados("p5")[0] || "",
-    p6: marcados("p6")[0] || "",
-    p7: marcados("p7")[0] || "",
-    p8: marcados("p8")[0] || "",
-    p9: marcados("p9")[0] || "",
-    p10: marcados("p10")[0] || "",
-    p11: marcados("p11")[0] || "",
-    p12: marcados("p12").join(" | "),
-    p13: marcados("p13")[0] || "",
-    p14: marcados("p14")[0] || "",
-    p15: marcados("p15")[0] || "",
-    p16: marcados("p16")[0] || "",
-    p17: marcados("p17")[0] || "",
-    p18: marcados("p18")[0] || "",
-    p19: document.querySelector('[name="p19"]').value,
-    p20: document.querySelector('[name="p20"]').value,
-    p21: document.querySelector('[name="p21"]').value,
-    p22: document.querySelector('[name="p22"]').value,
-    p23: marcados("p23")[0] || "",
-    p24: marcados("p24")[0] || "",
-    p25: marcados("p25")[0] || "",
-    p26: marcados("p26")[0] || "",
-    p27: marcados("p27")[0] || "",
-    p28: marcados("p28")[0] || "",
-    p29: marcados("p29").join(" | "),
-    p30: marcados("p30")[0] || "",
-    p31: marcados("p31")[0] || ""
-  };
+  const datos = { fecha: new Date().toISOString() };
+  for (let i = 0; i <= 31; i++) {
+    const c = "p" + i;
+    if (c === "p12" || c === "p29") datos[c] = marcados(c).join(" | ");
+    else if (NUMEROS.includes(c)) datos[c] = document.querySelector(`[name="${c}"]`).value;
+    else datos[c] = marcados(c)[0] || "";
+  }
   return datos;
 }
 
 function descargarCSV(datos) {
   const cols = Object.keys(datos);
   const fila = cols.map(c => `"${String(datos[c]).replace(/"/g, '""')}"`).join(",");
-  const encabezado = cols.join(",");
-  const blob = new Blob(["\uFEFF" + encabezado + "\n" + fila + "\n"], { type: "text/csv;charset=utf-8" });
+  const blob = new Blob(["\uFEFF" + cols.join(",") + "\n" + fila + "\n"], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "respuesta_" + Date.now() + ".csv";
@@ -432,33 +332,16 @@ async function enviar() {
   if (URL_APPS_SCRIPT) {
     try {
       await fetch(URL_APPS_SCRIPT, {
-        method: "POST",
-        mode: "no-cors",
+        method: "POST", mode: "no-cors",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(datos)
       });
-    } catch (e) {
-      descargarCSV(datos);
-    }
+    } catch (e) { descargarCSV(datos); }
   } else {
     descargarCSV(datos);
   }
   mostrar(7);
 }
-
-// Pregunta 12: máximo 2 opciones; "Ninguna" es excluyente
-const opcionesP12 = Array.from(document.querySelectorAll('[name="p12"]'));
-opcionesP12.forEach(cb => cb.addEventListener("change", () => {
-  if (cb.checked && cb.value === "Ninguna") {
-    opcionesP12.forEach(o => { if (o !== cb) o.checked = false; });
-  } else if (cb.checked) {
-    opcionesP12.forEach(o => { if (o.value === "Ninguna") o.checked = false; });
-  }
-  if (opcionesP12.filter(o => o.checked).length > 2) {
-    cb.checked = false;
-    alert("Puede elegir máximo 2 opciones en la pregunta 12.");
-  }
-}));
 
 mostrar(0);
 </script>
